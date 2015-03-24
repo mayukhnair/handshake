@@ -4,6 +4,10 @@ Peer-to-peer file transfer. No password/sign-up/storage/server/bullshit required
 ## Test reports as per the minions of Travis CI
 [![Build Status](https://travis-ci.org/mayukhnair/handshake.svg?branch=master)](https://travis-ci.org/mayukhnair/handshake)
 
+| Linux | Windows |
+| ----- | ------- |
+| [![Linux Build Status](https://travis-ci.org/mayukhnair/handshake.svg?branch=master)](https://travis-ci.org/mayukhnair/handshake) | [![Build status](https://ci.appveyor.com/api/projects/status/120vptpew3a3m40t?svg=true)](https://ci.appveyor.com/project/mayukhnair/handshake)
+
 ## What is 'Handshake'?
 Handshake is a Java program that allows you transfer files between any two Internet-connected computers without requiring an file-transfer server to act as intermediate. Light, nimble and multi-platform, Handshake is everything a good, simple file transfer program should be, without being too geeky/nerdy.
 
