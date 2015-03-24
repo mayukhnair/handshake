@@ -2,7 +2,9 @@
 Peer-to-peer file transfer. No password/sign-up/storage/server/bullshit required.
 
 ## Test reports as per the minions of Travis CI
-[![Build Status](https://travis-ci.org/mayukhnair/handshake.svg?branch=master)](https://travis-ci.org/mayukhnair/handshake)
+| General build status |
+| -------------------- |
+|[![Build Status](https://travis-ci.org/mayukhnair/handshake.svg?branch=master)](https://travis-ci.org/mayukhnair/handshake)
 
 | Linux | Windows |
 | ----- | ------- |
