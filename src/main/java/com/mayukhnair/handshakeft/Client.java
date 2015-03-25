@@ -6,17 +6,12 @@
 
 package com.mayukhnair.handshakeft;
 
-import com.mayukhnair.handshakeft.HandshakeKeygen;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -60,8 +55,8 @@ public class Client extends javax.swing.JFrame {
         downtrackfiletf = new javax.swing.JTextField();
         downtrackbrowsebutton = new javax.swing.JButton();
         infolabel7 = new javax.swing.JLabel();
-        transferButton = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
+        transferButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HandShake File Transfer");
@@ -206,12 +201,17 @@ public class Client extends javax.swing.JFrame {
 
         infolabel7.setText("Where should incoming files be saved?");
 
-        transferButton.setText("Transfer");
-
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
+            }
+        });
+
+        transferButton.setText("Transfer");
+        transferButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transferButtonActionPerformed(evt);
             }
         });
 
@@ -235,7 +235,6 @@ public class Client extends javax.swing.JFrame {
                             .addComponent(infolabel7))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(FileDirPanelLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(transferButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Exit)))
@@ -256,10 +255,10 @@ public class Client extends javax.swing.JFrame {
                     .addComponent(downtrackbrowsebutton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infolabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(FileDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(transferButton)
-                    .addComponent(Exit))
+                    .addComponent(Exit)
+                    .addComponent(transferButton))
                 .addContainerGap())
         );
 
@@ -294,8 +293,8 @@ public class Client extends javax.swing.JFrame {
                     .addComponent(fkPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ykPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FileDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(FileDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -365,6 +364,27 @@ public class Client extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void transferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transferButtonActionPerformed
+        // TODO add your handling code here:
+       Thread initiateTransferThread=new Thread(new Runnable(){
+           public void run(){
+       try{
+            HandshakeDecryptor decr=new HandshakeDecryptor();
+        String friendAddr=decr.decryptFriendKey(FriendKeyField.getText());
+        System.out.println("Friend's IP address is: "+friendAddr);
+        HandshakeFTPServer server=new HandshakeFTPServer();
+        server.StartFTPServer();
+        
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(null, "Uh-oh: "+e.getMessage());
+       }
+           }
+       });
+       initiateTransferThread.start();
+        
+    }//GEN-LAST:event_transferButtonActionPerformed
 
     /**
      * @param args the command line arguments
