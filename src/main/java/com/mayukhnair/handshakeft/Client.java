@@ -72,7 +72,7 @@ public class Client extends javax.swing.JFrame {
         VersionLabel.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         VersionLabel.setText("v1.0 Antimony ");
 
-        ykPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Your Handshake key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 255))); // NOI18N
+        ykPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Your Handshake key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(0, 102, 255))); // NOI18N
 
         infolabel1.setText("This here is your Handshake key.");
 
@@ -130,7 +130,7 @@ public class Client extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        fkPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Your friend's Handshake key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 255))); // NOI18N
+        fkPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Your friend's Handshake key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(0, 102, 255))); // NOI18N
 
         FriendKeyField.setFont(new java.awt.Font("Palatino Linotype", 2, 14)); // NOI18N
         FriendKeyField.setForeground(new java.awt.Color(204, 204, 204));
@@ -191,7 +191,7 @@ public class Client extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        FileDirPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "File directories", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 255))); // NOI18N
+        FileDirPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "File directories", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(0, 102, 255))); // NOI18N
 
         uptrackbrowseButton.setText("Browse");
 
@@ -293,8 +293,8 @@ public class Client extends javax.swing.JFrame {
                     .addComponent(fkPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ykPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FileDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(FileDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 186, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
